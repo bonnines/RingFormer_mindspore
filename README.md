@@ -23,9 +23,12 @@ pip install -r requirements.txt
 | PD      | 277     | 80.7         | 88.2         | 8.5          |
 
 ## Training & Evaluation
+* To construct ring graphs, run this command:
+```train
+python generate_ring_graphs.py --dataset <dataset> 
+```
 
-To train the model(s) in the paper, run this command:
-
+* To train the model(s) in the paper, run this command:
 ```train
 python train.py --dataset <dataset> 
 ```
