@@ -1,6 +1,6 @@
 # RingFormer: A Ring-Enhanced Graph Transformer for Organic Solar Cell Property Prediction
 
-This repository is an official PyTorch(Geometric) implementation of RingFormer in "RingFormer: A Ring-Enhanced Graph Transformer for Organic Solar Cell Property Prediction". 
+This repository is a reproduced MindSpore implementation of RingFormer in "RingFormer: A Ring-Enhanced Graph Transformer for Organic Solar Cell Property Prediction". 
 
 ![Framework](figs/framework.png)
 
@@ -22,15 +22,32 @@ pip install -r requirements.txt
 | NFA       | 654     | 118.2        | 133.0        | 15.8         |
 | PD      | 277     | 80.7         | 88.2         | 8.5          |
 
+# Results
+
+PCE (%) prediction performance: 
+
+| Experiments   | HOPV | PFD |
+| ------------ | --------- | --------- |
+| Original Paper | 1.477±0.021 | 1.776±0.014 |
+| Reproduced | 1.5775±0.0707  | 1.7781±0.0725 |
+
+
 ## Training & Evaluation
 * To construct ring graphs, run this command:
 ```train
 python generate_ring_graphs.py --dataset <dataset> 
 ```
 
-* To train the model(s) in the paper, run this command:
+* To train the model(s) in the paper, enter ringformer_mindspore.ipynb:
 ```train
-python train.py --dataset <dataset> 
+import sys
+sys.argv = [
+    "train.py",          
+    "-dataset","<dataset>",
+]
+
+args = parser.parse_args()                
+train(args, None) 
 ```
 --dataset: ('HOPV', 'PFD', 'NFA', 'PD', 'CEPDB')
 
