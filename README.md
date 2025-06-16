@@ -33,12 +33,8 @@ PCE (%) prediction performance:
 
 
 ## Training & Evaluation
-* To construct ring graphs, run this command:
-```train
-python generate_ring_graphs.py --dataset <dataset> 
-```
 
-* To train the model(s) in the paper, enter ringformer_mindspore.ipynb:
+* To train the model(s) in the paper, enter `ringformer_mindspore.ipynb`:
 ```train
 import sys
 sys.argv = [
